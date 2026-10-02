@@ -1,0 +1,42 @@
+{
+  "captured_at_utc": "2026-07-18T14:49:57.975341+00:00",
+  "installed_packages": {
+    "command": [
+      "uv",
+      "pip",
+      "freeze"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "a2a-sdk==1.0.0a0\naiosqlite==0.22.1\nannotated-doc==0.0.4\nannotated-types==0.7.0\nanyio==4.12.1\ncertifi==2026.2.25\ncffi==2.0.0\ncharset-normalizer==3.4.6\nclick==8.3.1\ncolorama==0.4.6\ncryptography==46.0.5\nfastapi==0.135.1\ngoogle-api-core==2.30.0\ngoogle-auth==2.49.1\ngoogleapis-common-protos==1.73.0\ngreenlet==3.3.2\nh11==0.16.0\nhttpcore==1.0.9\nhttpx==0.28.1\nhttpx-sse==0.4.3\nidna==3.11\niniconfig==2.3.0\njson-rpc==1.15.0\npackaging==26.0\npluggy==1.6.0\nproto-plus==1.27.1\nprotobuf==6.33.5\npyasn1==0.6.3\npyasn1-modules==0.4.2\npycparser==3.0\npydantic==2.12.5\npydantic-core==2.41.5\npygments==2.20.0\npyjwt==2.12.1\npytest==9.1.1\npython-dotenv==1.2.2\nrequests==2.32.5\nrfc8785==0.1.4\nsqlalchemy==2.0.48\nsse-starlette==3.3.3\nstarlette==0.52.1\ntyping-extensions==4.15.0\ntyping-inspection==0.4.2\nurllib3==2.6.3\nuvicorn==0.42.0"
+  },
+  "latency_scope": "local_security_pipeline_only",
+  "platform": {
+    "logical_cpu_count": 8,
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "release": "11",
+    "system": "Windows",
+    "version": "10.0.26200"
+  },
+  "python_version": {
+    "command": [
+      "python",
+      "--version"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Python 3.14.6"
+  },
+  "size_scope": "serialized_local_benchmark_payload_not_http_wire_bytes",
+  "uv_version": {
+    "command": [
+      "uv",
+      "--version"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "uv 0.11.29 (901092ee1 2026-07-15 x86_64-pc-windows-msvc)"
+  },
+  "sanitization": "Removed the absolute interpreter path and editable local project path; preserved recorded software versions and platform."
+}

@@ -1,0 +1,9 @@
+{
+  "attack_runs": 500,
+  "benign_runs": 400,
+  "detected_attacks": 500,
+  "false_rejection_rate_percent": 0.0,
+  "false_rejections": 0,
+  "overall_attack_detection_rate_percent": 100.0,
+  "scope_widening_policy_gap": "Not part of the 5-condition benchmark; documented separately by Step D."
+}

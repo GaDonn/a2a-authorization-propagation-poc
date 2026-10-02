@@ -1,0 +1,18 @@
+{
+  "accepted": false,
+  "actual_signing_key": "reimbursement-client-ed25519-v1",
+  "application_logic_reached": false,
+  "attack": "sender_impersonation",
+  "client_round_trip_time_ms": 93.2103,
+  "client_round_trip_time_ns": 93210300,
+  "declared_sender": "patient-agent",
+  "error_message": "invalid Ed25519 request signature",
+  "forwarded_to_insurance": false,
+  "passed": true,
+  "receiver": "hospital-agent",
+  "rejected": true,
+  "rejection_stage": "request_signature_verification",
+  "response": "Hospital rejected request before healthcare processing: invalid Ed25519 request signature.",
+  "verification_time_ms": 2.8729,
+  "verification_time_ns": 2872900
+}

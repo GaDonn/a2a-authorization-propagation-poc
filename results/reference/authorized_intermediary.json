@@ -1,0 +1,26 @@
+{
+  "capabilities_used": [
+    "shared C2 HMAC secret",
+    "hospital-agent Ed25519 private key",
+    "authorized append of the Hospital-to-Insurance delegation entry"
+  ],
+  "case": "malicious_authorized_intermediary",
+  "checks_asserted_valid": [
+    "C3 request authentication",
+    "Hospital Secure Passport v1 CallerContext",
+    "C2 companion artifact integrity and origin verification",
+    "authorization-details binding",
+    "delegation-path verification",
+    "insurance application validation"
+  ],
+  "intermediary": "hospital-agent",
+  "modification": {
+    "field": "authorization_details[0].maximum_amount.value",
+    "modified": "9000",
+    "original": "120"
+  },
+  "observed_outcome": "approved",
+  "passed": true,
+  "returncode": 0,
+  "test_file": "tests/test_authorized_intermediary_limitation.py"
+}

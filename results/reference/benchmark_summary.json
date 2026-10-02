@@ -1,0 +1,13 @@
+{
+  "condition_count": 9,
+  "latency_scope": "local_security_pipeline_only",
+  "row_validation": {
+    "attack_acceptance_count": 0,
+    "benign_failure_count": 0,
+    "expected_rows": 900,
+    "observed_rows": 900,
+    "valid": true
+  },
+  "runs_per_condition": 100,
+  "size_scope": "serialized_local_benchmark_payload_not_http_wire_bytes"
+}

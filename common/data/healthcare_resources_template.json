@@ -1,0 +1,205 @@
+{
+  "modelVersion": "1.0",
+  "resources": {
+    "patient": {
+      "resourceType": "Patient",
+      "id": "patient-001",
+      "identifier": [
+        {
+          "system": "https://example.org/fhir/identifier/patient",
+          "value": "P001"
+        }
+      ],
+      "active": true
+    },
+    "coverage": {
+      "resourceType": "Coverage",
+      "id": "coverage-basic-001",
+      "identifier": [
+        {
+          "system": "https://example.org/fhir/identifier/coverage",
+          "value": "COV-BASIC-001"
+        }
+      ],
+      "status": "active",
+      "kind": "insurance",
+      "beneficiary": {
+        "reference": "Patient/patient-001"
+      },
+      "period": {
+        "start": "2026-01-01",
+        "end": "2026-12-31"
+      },
+      "insurer": {
+        "identifier": {
+          "system": "https://example.org/fhir/identifier/organization",
+          "value": "insurance-agent"
+        },
+        "display": "Synthetic Insurance Organization"
+      },
+      "class": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                "code": "plan",
+                "display": "Plan"
+              }
+            ]
+          },
+          "value": {
+            "system": "https://example.org/fhir/identifier/insurance-plan",
+            "value": "basic"
+          },
+          "name": "Basic synthetic plan"
+        }
+      ]
+    },
+    "claim": {
+      "resourceType": "Claim",
+      "id": "claim-001",
+      "identifier": [
+        {
+          "system": "https://example.org/fhir/identifier/claim",
+          "value": "CLM-001"
+        }
+      ],
+      "status": "active",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+            "code": "professional",
+            "display": "Professional"
+          }
+        ]
+      },
+      "use": "claim",
+      "patient": {
+        "reference": "Patient/patient-001"
+      },
+      "created": "2026-07-17T10:00:00Z",
+      "insurer": {
+        "identifier": {
+          "system": "https://example.org/fhir/identifier/organization",
+          "value": "insurance-agent"
+        },
+        "display": "Synthetic Insurance Organization"
+      },
+      "provider": {
+        "identifier": {
+          "system": "https://example.org/fhir/identifier/organization",
+          "value": "hospital-agent"
+        },
+        "display": "Synthetic Hospital Organization"
+      },
+      "priority": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+            "code": "normal",
+            "display": "Normal"
+          }
+        ]
+      },
+      "insurance": [
+        {
+          "sequence": 1,
+          "focal": true,
+          "coverage": {
+            "reference": "Coverage/coverage-basic-001"
+          }
+        }
+      ],
+      "item": [
+        {
+          "sequence": 1,
+          "productOrService": {
+            "coding": [
+              {
+                "system": "https://example.org/fhir/CodeSystem/treatment",
+                "code": "T123",
+                "display": "Synthetic treatment T123"
+              }
+            ]
+          },
+          "servicedDate": "2026-07-15",
+          "unitPrice": {
+            "value": 120,
+            "currency": "EUR"
+          },
+          "quantity": {
+            "value": 1
+          },
+          "net": {
+            "value": 120,
+            "currency": "EUR"
+          }
+        }
+      ],
+      "total": {
+        "value": 120,
+        "currency": "EUR"
+      }
+    },
+    "provenance": {
+      "resourceType": "Provenance",
+      "id": "provenance-claim-001",
+      "target": [
+        {
+          "reference": "Claim/claim-001"
+        }
+      ],
+      "occurredDateTime": "2026-07-17T10:00:00Z",
+      "recorded": "2026-07-17T10:00:01Z",
+      "activity": {
+        "coding": [
+          {
+            "system": "https://example.org/fhir/CodeSystem/provenance-activity",
+            "code": "claim-creation",
+            "display": "Synthetic claim creation"
+          }
+        ]
+      },
+      "patient": {
+        "reference": "Patient/patient-001"
+      },
+      "agent": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                "code": "author",
+                "display": "Author"
+              }
+            ]
+          },
+          "role": [
+            {
+              "coding": [
+                {
+                  "system": "https://example.org/fhir/CodeSystem/agent-security-role",
+                  "code": "requestor",
+                  "display": "Reimbursement requestor"
+                }
+              ]
+            }
+          ],
+          "who": {
+            "reference": "Patient/patient-001"
+          }
+        }
+      ],
+      "entity": [
+        {
+          "role": "source",
+          "what": {
+            "reference": "Coverage/coverage-basic-001"
+          }
+        }
+      ]
+    }
+  }
+}

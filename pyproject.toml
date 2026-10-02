@@ -1,0 +1,44 @@
+[project]
+name = "a2a-authorization-propagation-poc"
+version = "1.0.0"
+description = "Research prototype for authorization propagation and per-hop request security in delegated Agent2Agent workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "a2a-sdk[sqlite]==1.0.0a0",
+    "cryptography>=45,<47",
+    "fastapi>=0.115.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.11.4",
+    "PyJWT>=2.0.0",
+    "python-dotenv>=1.1.0",
+    "sse-starlette>=2.3.5",
+    "starlette>=0.46.2",
+    "uvicorn>=0.34.2",
+    "packaging>=24.0",
+    "rfc8785==0.1.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["common", "patient_agent", "hospital_agent", "insurance_agent", "scripts"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.10.9",
+    "pytest>=9.1.1",
+]
+
+[tool.lint]
+line-length = 110
+
+[tool.ruff.lint]
+ignore = ["E203"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

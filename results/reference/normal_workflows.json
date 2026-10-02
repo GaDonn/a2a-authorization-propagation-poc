@@ -1,0 +1,94 @@
+{
+  "all_passed": true,
+  "configurations": [
+    {
+      "all_log_checks_passed": true,
+      "approved": true,
+      "client_exit_code": 0,
+      "client_output": "FINAL RESPONSE\n==============\nPatient Agent received response from Hospital Agent:\nHospital Agent received from Insurance Agent:\nInsurance approved reimbursement for Claim/claim-001, beneficiary Patient/patient-001, coverage Coverage/coverage-basic-001, amount 120 EUR. Reason: Claim, Coverage, beneficiary, Hospital validation, and applicable authorization constraints are valid.",
+      "expected_approval_found": true,
+      "log_checks": {
+        "baseline_hospital_path": true,
+        "baseline_insurance_path": true,
+        "deterministic_decision_present": true,
+        "hospital_started": true,
+        "insurance_started": true,
+        "no_patient_signature_check": true,
+        "patient_started": true
+      },
+      "mode": "baseline",
+      "name": "C0_baseline",
+      "passed": true,
+      "replay_protection": "off",
+      "request_authentication": "off"
+    },
+    {
+      "all_log_checks_passed": true,
+      "approved": true,
+      "client_exit_code": 0,
+      "client_output": "FINAL RESPONSE\n==============\nPatient Agent received response from Hospital Agent:\nHospital Agent received from Insurance Agent:\nInsurance approved reimbursement for Claim/claim-001, beneficiary Patient/patient-001, coverage Coverage/coverage-basic-001, amount 120 EUR. Reason: Claim, Coverage, beneficiary, Hospital validation, and applicable authorization constraints are valid.",
+      "expected_approval_found": true,
+      "log_checks": {
+        "deterministic_decision_present": true,
+        "hospital_passport_verified": true,
+        "hospital_started": true,
+        "insurance_passport_verified": true,
+        "insurance_started": true,
+        "no_patient_signature_check": true,
+        "patient_started": true
+      },
+      "mode": "passport",
+      "name": "C1_standard_passport",
+      "passed": true,
+      "replay_protection": "off",
+      "request_authentication": "off"
+    },
+    {
+      "all_log_checks_passed": true,
+      "approved": true,
+      "client_exit_code": 0,
+      "client_output": "FINAL RESPONSE\n==============\nPatient Agent received response from Hospital Agent:\nHospital Agent received from Insurance Agent:\nInsurance approved reimbursement for Claim/claim-001, beneficiary Patient/patient-001, coverage Coverage/coverage-basic-001, amount 120 EUR. Reason: Claim, Coverage, beneficiary, Hospital validation, and applicable authorization constraints are valid.",
+      "expected_approval_found": true,
+      "log_checks": {
+        "delegation_verified": true,
+        "deterministic_decision_present": true,
+        "hospital_binding_verified": true,
+        "hospital_started": true,
+        "insurance_binding_verified": true,
+        "insurance_started": true,
+        "no_patient_signature_check": true,
+        "patient_started": true
+      },
+      "mode": "extended",
+      "name": "C2_extended",
+      "passed": true,
+      "replay_protection": "off",
+      "request_authentication": "off"
+    },
+    {
+      "all_log_checks_passed": true,
+      "approved": true,
+      "client_exit_code": 0,
+      "client_output": "FINAL RESPONSE\n==============\nPatient Agent received response from Hospital Agent:\nHospital Agent received from Insurance Agent:\nInsurance approved reimbursement for Claim/claim-001, beneficiary Patient/patient-001, coverage Coverage/coverage-basic-001, amount 120 EUR. Reason: Claim, Coverage, beneficiary, Hospital validation, and applicable authorization constraints are valid.",
+      "expected_approval_found": true,
+      "log_checks": {
+        "delegation_verified": true,
+        "deterministic_decision_present": true,
+        "hospital_binding_verified": true,
+        "hospital_fail_closed_valid": true,
+        "hospital_started": true,
+        "insurance_binding_verified": true,
+        "insurance_fail_closed_valid": true,
+        "insurance_started": true,
+        "patient_fail_closed_valid": true,
+        "patient_started": true
+      },
+      "mode": "extended",
+      "name": "C3_extended_signed",
+      "passed": true,
+      "replay_protection": "off",
+      "request_authentication": "on"
+    }
+  ],
+  "workflow": "normal benign reimbursement"
+}

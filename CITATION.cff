@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this research artifact, cite this software and the associated thesis."
+type: software
+title: "Authorization Propagation in Delegated A2A Workflows: Research Artifact"
+version: 1.0.0
+authors:
+  - family-names: "Donno"
+    given-names: "Gabriele"
+abstract: >-
+  Proof of concept for caller context, transitive authorization evidence,
+  and per-hop request security in a synthetic Agent2Agent reimbursement workflow.
+keywords:
+  - Agent2Agent
+  - delegated authorization
+  - Secure Passport
+  - request authentication
+  - reproducibility
+preferred-citation:
+  type: thesis
+  title: "Trust and Identity Propagation in Agentic AI Systems"
+  authors:
+    - family-names: "Donno"
+      given-names: "Gabriele"
+  year: 2026
+  month: 8
+  institution:
+    name: "Norwegian University of Science and Technology"

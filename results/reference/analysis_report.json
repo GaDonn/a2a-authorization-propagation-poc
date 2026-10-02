@@ -1,0 +1,10 @@
+{
+  "attack_scenarios": 5,
+  "benign_configurations": 4,
+  "false_rejection_rate_percent": 0.0,
+  "input_rows": 900,
+  "latency_scope": "local_security_pipeline_only",
+  "overall_attack_detection_rate_percent": 100.0,
+  "size_scope": "serialized_local_benchmark_payload_not_http_wire_bytes",
+  "warning": "Performance comparisons use benign conditions only. Replay scenarios involve multi-attempt logic and are not used for latency-overhead claims."
+}

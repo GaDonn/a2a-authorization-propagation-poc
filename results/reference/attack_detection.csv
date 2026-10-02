@@ -1,0 +1,6 @@
+scenario,runs,rejected,accepted,attack_detection_rate_percent,dominant_rejection_reason,dominant_detection_layer
+authorization_artifact_replay,100,100,0,100.0,authorization nonce already consumed,C2
+modified_metadata,100,100,0,100.0,protected metadata digest mismatch,C3
+modified_text,100,100,0,100.0,text digest mismatch,C3
+request_replay,100,100,0,100.0,request nonce already consumed,C3
+sender_impersonation,100,100,0,100.0,invalid Ed25519 request signature,C3

@@ -1,0 +1,209 @@
+{
+  "architecture": {
+    "c2": "project-specific companion authorization-evidence artifact",
+    "c3": "project-specific signed A2A request-authentication envelope"
+  },
+  "artifact_summary": {
+    "authorization_details_hash": "f8d7355e1f58a595ec923c3199fee9d177837ec60071519150b635dfc03ac47e",
+    "authorization_nonce": "authorization-nonce-001",
+    "delegation_chain": [
+      {
+        "from": "user",
+        "scope": [
+          "request_reimbursement"
+        ],
+        "timestamp": 1000,
+        "to": "patient-agent"
+      },
+      {
+        "from": "patient-agent",
+        "scope": [
+          "request_reimbursement",
+          "send_to_hospital"
+        ],
+        "timestamp": 1001,
+        "to": "hospital-agent"
+      },
+      {
+        "from": "hospital-agent",
+        "scope": [
+          "validate_claim",
+          "request_insurance_authorization"
+        ],
+        "timestamp": 1002,
+        "to": "insurance-agent"
+      }
+    ]
+  },
+  "authorization_artifact_replay": {
+    "artifact_nonce_consumption": {
+      "nonce": "authorization-nonce-001",
+      "reason": "authorization nonce consumed",
+      "replay_protected": true,
+      "valid": true
+    },
+    "description": "Two distinct, valid C3 requests carry the same C2 authorization artifact. The second request is fresh at the request layer, but the authorization nonce has already been consumed.",
+    "expected_artifact_outcome": "rejected",
+    "first_artifact_verification": {
+      "freshness": {
+        "expires_at": 1300,
+        "issued_at": 1000
+      },
+      "nonce": {
+        "replay_protected": true,
+        "value": "authorization-nonce-001"
+      },
+      "origin": {
+        "client_id": "patient-agent",
+        "reason": "origin CallerContext valid and bound",
+        "state_hash": "b25ca839d83c9a638db0e04bc97f74f1107627a6b30f0c4f531017d49f21736c",
+        "valid": true
+      },
+      "reason": "Extended Secure Passport valid",
+      "valid": true
+    },
+    "first_request_envelope": {
+      "created_at": 1000,
+      "expires_at": 1060,
+      "key_id": "hospital-agent-ed25519-v1",
+      "message_id": "artifact-replay-message-001",
+      "nonce": "artifact-replay-request-nonce-001",
+      "protected_metadata_digest": "f52e8fc72c4da9f3be4723bc9bcfb915ba04d20eea6c7273a13a6a837d26d6fb",
+      "protected_metadata_fields": [
+        "healthcare_resources",
+        "authorization_details",
+        "https://github.com/a2aproject/a2a-samples/tree/main/samples/python/extensions/secure-passport",
+        "urn:thesis:a2a:extensions:extended-secure-passport:authorization-evidence:v1",
+        "hospital_validation",
+        "hospital_provenance"
+      ],
+      "receiver_id": "insurance-agent",
+      "sender_id": "hospital-agent",
+      "signature": "E8wgBll4uv23JV-3VienM25teys-UJTiSOmpfIK3Uu7-398lGWwXTYEqQLRm8G6HDc8WSrkMSNLUxiJwVGXsDg==",
+      "text_digest": "3b3ed5c5de3ecedcb79a8c5d132bc5abf153353b8e6393565d4e355437e141a0"
+    },
+    "first_request_verification": {
+      "key_id": "hospital-agent-ed25519-v1",
+      "message_id": "artifact-replay-message-001",
+      "nonce": "artifact-replay-request-nonce-001",
+      "nonce_consumed": true,
+      "reason": "signed A2A request-authentication envelope valid",
+      "receiver_id": "insurance-agent",
+      "sender_id": "hospital-agent",
+      "valid": true
+    },
+    "message_ids_are_distinct": true,
+    "observed_artifact_outcome": "rejected",
+    "passed": true,
+    "request_nonces_are_distinct": true,
+    "second_artifact_verification": {
+      "reason": "authorization nonce already consumed",
+      "valid": false
+    },
+    "second_request_envelope": {
+      "created_at": 1000,
+      "expires_at": 1060,
+      "key_id": "hospital-agent-ed25519-v1",
+      "message_id": "artifact-replay-message-002",
+      "nonce": "artifact-replay-request-nonce-002",
+      "protected_metadata_digest": "f52e8fc72c4da9f3be4723bc9bcfb915ba04d20eea6c7273a13a6a837d26d6fb",
+      "protected_metadata_fields": [
+        "healthcare_resources",
+        "authorization_details",
+        "https://github.com/a2aproject/a2a-samples/tree/main/samples/python/extensions/secure-passport",
+        "urn:thesis:a2a:extensions:extended-secure-passport:authorization-evidence:v1",
+        "hospital_validation",
+        "hospital_provenance"
+      ],
+      "receiver_id": "insurance-agent",
+      "sender_id": "hospital-agent",
+      "signature": "gPQ3Yqw28E5C82F_9CiqkZr66llmMMxg3wiCaXX0q7y6jbuUFvrpzb7UhOBiN87t4eiu2yzsehu7ngxS5OCBBA==",
+      "text_digest": "3b3ed5c5de3ecedcb79a8c5d132bc5abf153353b8e6393565d4e355437e141a0"
+    },
+    "second_request_verification": {
+      "key_id": "hospital-agent-ed25519-v1",
+      "message_id": "artifact-replay-message-002",
+      "nonce": "artifact-replay-request-nonce-002",
+      "nonce_consumed": true,
+      "reason": "signed A2A request-authentication envelope valid",
+      "receiver_id": "insurance-agent",
+      "sender_id": "hospital-agent",
+      "valid": true
+    },
+    "signatures_are_distinct": true
+  },
+  "authorization_details": [
+    {
+      "actions": [
+        "request_reimbursement"
+      ],
+      "beneficiary": {
+        "reference": "Patient/patient-001"
+      },
+      "claim": {
+        "reference": "Claim/claim-001"
+      },
+      "coverage": {
+        "reference": "Coverage/coverage-basic-001"
+      },
+      "maximum_amount": {
+        "currency": "EUR",
+        "value": "120"
+      },
+      "treatment": {
+        "code": "T123"
+      },
+      "type": "healthcare_reimbursement"
+    }
+  ],
+  "experiment": "separate_request_and_authorization_artifact_replay_domains",
+  "passed": true,
+  "request_replay": {
+    "description": "The same signed C3 request is presented twice.",
+    "envelope": {
+      "created_at": 1000,
+      "expires_at": 1060,
+      "key_id": "hospital-agent-ed25519-v1",
+      "message_id": "request-replay-message-001",
+      "nonce": "request-replay-nonce-001",
+      "protected_metadata_digest": "f52e8fc72c4da9f3be4723bc9bcfb915ba04d20eea6c7273a13a6a837d26d6fb",
+      "protected_metadata_fields": [
+        "healthcare_resources",
+        "authorization_details",
+        "https://github.com/a2aproject/a2a-samples/tree/main/samples/python/extensions/secure-passport",
+        "urn:thesis:a2a:extensions:extended-secure-passport:authorization-evidence:v1",
+        "hospital_validation",
+        "hospital_provenance"
+      ],
+      "receiver_id": "insurance-agent",
+      "sender_id": "hospital-agent",
+      "signature": "0y9EyNJHmDXwd2VZiyaQC2yYJjGxMLfPBZtOCV3tXf6E6fiYj-S64jVpTD-y8ZI70XkZbn2T-53levUz5WFYDA==",
+      "text_digest": "3b3ed5c5de3ecedcb79a8c5d132bc5abf153353b8e6393565d4e355437e141a0"
+    },
+    "expected_second_outcome": "rejected",
+    "first_verification": {
+      "key_id": "hospital-agent-ed25519-v1",
+      "message_id": "request-replay-message-001",
+      "nonce": "request-replay-nonce-001",
+      "nonce_consumed": true,
+      "reason": "signed A2A request-authentication envelope valid",
+      "receiver_id": "insurance-agent",
+      "sender_id": "hospital-agent",
+      "valid": true
+    },
+    "observed_second_outcome": "rejected",
+    "passed": true,
+    "request_cache_after_first": [
+      "request-replay-nonce-001"
+    ],
+    "second_verification": {
+      "reason": "request nonce already consumed",
+      "valid": false
+    }
+  },
+  "summary": {
+    "authorization_artifact_replay_rejected": true,
+    "request_and_authorization_nonces_are_distinct": true,
+    "request_replay_rejected": true
+  }
+}

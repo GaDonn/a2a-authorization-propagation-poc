@@ -1,0 +1,42 @@
+{
+  "authorization_details": [
+    {
+      "type": "healthcare_reimbursement",
+      "identifier": "authz-claim-001",
+      "actions": [
+        "request_reimbursement"
+      ],
+      "claim": {
+        "reference": "Claim/claim-001"
+      },
+      "beneficiary": {
+        "reference": "Patient/patient-001"
+      },
+      "coverage": {
+        "reference": "Coverage/coverage-basic-001"
+      },
+      "treatment": {
+        "system": "https://example.org/fhir/CodeSystem/treatment",
+        "code": "T123"
+      },
+      "maximum_amount": {
+        "value": 120,
+        "currency": "EUR"
+      },
+      "consent": {
+        "status": "granted",
+        "purpose": "reimbursement_processing"
+      },
+      "constraints": {
+        "permitted_destination": "insurance-agent",
+        "permitted_hops": [
+          "patient-agent",
+          "hospital-agent",
+          "insurance-agent"
+        ],
+        "max_agent_hops": 2,
+        "valid_until": "2026-12-31T23:59:59Z"
+      }
+    }
+  ]
+}

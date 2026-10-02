@@ -1,0 +1,27 @@
+{
+  "architecture": {
+    "c1": "A2A Secure Passport Extension v1",
+    "c2": "Thesis Extended Secure Passport",
+    "c3": "Project-specific per-hop signed A2A request envelope"
+  },
+  "covered_attacks": [
+    "sender_impersonation",
+    "modified_text",
+    "modified_standard_secure_passport",
+    "modified_extended_secure_passport",
+    "authorization_amount_tampering",
+    "authorization_beneficiary_tampering",
+    "authorization_coverage_tampering",
+    "authorization_treatment_tampering",
+    "authorization_action_tampering",
+    "unauthorized_hop",
+    "destination_substitution",
+    "scope_widening_policy_gap",
+    "request_replay",
+    "authorization_artifact_replay",
+    "expired_authorization_artifact"
+  ],
+  "passed": true,
+  "returncode": 0,
+  "test_file": "tests/test_step_d_adversarial_matrix.py"
+}
