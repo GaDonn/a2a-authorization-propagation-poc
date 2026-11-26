@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this research artifact, cite this software and the associated thesis."
+message: "If you use this research artifact, please cite the software and the accompanying paper."
 type: software
 title: "Authorization Propagation in Delegated A2A Workflows: Research Artifact"
 version: 1.0.0
@@ -18,8 +18,8 @@ keywords:
   - request authentication
   - reproducibility
 preferred-citation:
-  type: thesis
-  title: "Trust and Identity Propagation in Agentic AI Systems"
+  type: article
+  title: "Authorization Propagation in Agent2Agent Systems: An Experimental Security Evaluation of Multi-Hop Delegation"
   authors:
     - family-names: "Donno"
       given-names: "Gabriele"
