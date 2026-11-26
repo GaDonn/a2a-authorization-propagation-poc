@@ -1,5 +1,11 @@
 # Authorization propagation in delegated A2A workflows
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![A2A](https://img.shields.io/badge/Protocol-Agent2Agent-087F8C)
+![Research](https://img.shields.io/badge/Research-Master's_Thesis-7849A5)
+![NTNU](https://img.shields.io/badge/NTNU-2026-00509E)
+![Status](https://img.shields.io/badge/Status-Research_Prototype-B07824)
+
 Research artifact for **Trust and Identity Propagation in Agentic AI Systems** (master's thesis, NTNU, August 2026) and the accompanying paper **Authorization Propagation in Agent2Agent Systems: An Experimental Security Evaluation of Multi-Hop Delegation**.
 
 This proof of concept asks what a downstream agent can verify when the agent sending a request differs from the principal that originally authorized it. A synthetic healthcare reimbursement workflow separates current-caller context, inherited authorization evidence, and authentication of each direct request, without changing the A2A core protocol.
