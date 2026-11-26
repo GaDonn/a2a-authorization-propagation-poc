@@ -1,0 +1,29 @@
+# Local Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local configuration and generated keys
+.env
+.env.*
+!.env.example
+common/keys/
+*.private.pem
+
+# New measurements and logs; keep the reference dataset tracked
+results/local/
+*.log
+
+# Editors / operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
