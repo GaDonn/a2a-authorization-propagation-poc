@@ -104,4 +104,15 @@ This is a research prototype. It uses local keys, a local trust store and proces
 
 ## Citation and reuse
 
-Use [CITATION.cff](CITATION.cff) for this software artifact. The thesis title and date come from the supplied thesis; publication identifiers and a repository URL have not been assigned. See [reuse status](docs/license-status.md) for license information and [publication steps](docs/publishing.md) for uploading this repository to a personal GitHub account. This package does not include the thesis or paper PDFs.
+If you use this research artifact, please cite the software
+and the accompanying paper.
+
+- Software: [CITATION.cff](CITATION.cff)
+- Master's thesis: *Trust and Identity Propagation in Agentic AI Systems* (NTNU, August 2026).
+- Paper: [Authorization Propagation in Agent2Agent Systems: An Experimental Security Evaluation of Multi-Hop Delegation](https://arxiv.org/abs/2611.07050) (arXiv preprint, November 2026).
+
+See [reuse status](docs/license-status.md) for license information
+and [publication steps](docs/publishing.md) for repository
+publication instructions.
+
+This repository does not include the thesis or paper PDFs.
