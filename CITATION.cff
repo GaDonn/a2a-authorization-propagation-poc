@@ -6,6 +6,8 @@ version: 1.0.0
 authors:
   - family-names: "Donno"
     given-names: "Gabriele"
+repository-code: "https://github.com/GaDonn/a2a-authorization-propagation-poc"
+url: "https://github.com/GaDonn/a2a-authorization-propagation-poc"
 abstract: >-
   Proof of concept for caller context, transitive authorization evidence,
   and per-hop request security in a synthetic Agent2Agent reimbursement workflow.
@@ -21,7 +23,26 @@ preferred-citation:
   authors:
     - family-names: "Donno"
       given-names: "Gabriele"
+    - family-names: "Mehmood"
+      given-names: "Kashif"
+    - family-names: "Kralevska"
+      given-names: "Katina"
   year: 2026
-  month: 8
-  institution:
-    name: "Norwegian University of Science and Technology"
+  month: 11
+  journal: "arXiv"
+  status: preprint
+  url: "https://arxiv.org/abs/2611.07050"
+  identifiers:
+    - type: other
+      value: "arXiv:2611.07050"
+      description: "arXiv preprint"
+references:
+  - type: thesis
+    title: "Trust and Identity Propagation in Agentic AI Systems"
+    authors:
+      - family-names: "Donno"
+        given-names: "Gabriele"
+    year: 2026
+    month: 8
+    institution:
+      name: "Norwegian University of Science and Technology"
